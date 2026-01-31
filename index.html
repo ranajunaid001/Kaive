@@ -278,9 +278,6 @@
             border-radius: 12px;
             overflow: hidden;
             aspect-ratio: 16/9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .video-container::before {
@@ -291,11 +288,16 @@
             right: 0;
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            z-index: 1;
         }
 
-        .video-placeholder {
-            color: var(--muted);
-            font-size: 15px;
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* Social Proof */
@@ -622,14 +624,19 @@
     <!-- Video -->
     <section class="video-section">
         <div class="video-container">
-            <span class="video-placeholder">[ Your demo video here ]</span>
+            <iframe 
+                src="https://player.vimeo.com/video/1160440743?autoplay=1&loop=1&muted=1&background=1&quality=1080p"
+                allow="autoplay; fullscreen; picture-in-picture"
+                loading="lazy"
+                title="Kaive Demo">
+            </iframe>
         </div>
     </section>
 
     <!-- Social Proof -->
     <section class="social-proof">
-        <p>Built for people who meet people.<br>From casual networkers to relationship builders.</p>
-        <a href="#">See how people use Kaive →</a>
+        <p>Every conversation. Every idea. Every detail.<br><strong>Remembered.</strong></p>
+        <a href="#">See how it works →</a>
     </section>
 
     <!-- Problem Section -->
